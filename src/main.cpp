@@ -52,7 +52,6 @@ void write_to_bus(uint8_t value) {
         digitalWrite(bus[it], bitRead(value, it));
     }
 
-    delay(TIME_STEP);
     digitalWrite(Pin::LOAD, LOW);
     delay(TIME_STEP);
     digitalWrite(Pin::CLOCK, HIGH);
