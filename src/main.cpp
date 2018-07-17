@@ -37,9 +37,9 @@ void setup() {
     pinMode(Pin::CLOCK, OUTPUT);
     digitalWrite(Pin::CLOCK, LOW);
     pinMode(Pin::LOAD, OUTPUT);
-    digitalWrite(Pin::LOAD, LOW);
+    digitalWrite(Pin::LOAD, HIGH);
     pinMode(Pin::ENABLE, OUTPUT);
-    digitalWrite(Pin::ENABLE, LOW);
+    digitalWrite(Pin::ENABLE, HIGH);
 
     set_bus_mode(OUTPUT);
     delay(TIME_STEP);
@@ -82,7 +82,6 @@ uint8_t read_from_bus() {
 }
 
 void loop() {
-    delay(5000);
     for (uint8_t n = 0; n <= 0xFF; n++) {
         write_to_bus(n);
         Serial.print("-> ");
